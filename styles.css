@@ -1,0 +1,270 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family:'Orbitron', sans-serif;
+    background-color: #1a1a2e;
+    color: #fff;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+    
+}
+
+/* Custom Cursor Style */
+body {
+    cursor: url('icons8-cursor.svg'), auto; /* Use your custom SVG cursor */
+}
+
+/* Hand Cursor for Links and Buttons */
+a, button {
+    cursor: url('icons8-hand-cursor.svg'), pointer; /* Use hand cursor SVG for links and buttons */
+}
+
+/* Header and Navbar */
+/* Header and Navbar */
+header {
+    background: #0f3460;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f4eeef;
+    transition: color 0.3s ease;
+}
+
+nav .logo:hover {
+    color: #e94560; /* Change color on hover */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative; /* For the underline effect */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transform for scaling */
+    position: relative;
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px; /* Position the line below the text */
+    left: 0;
+    background-color: #e94560;
+    transform: scaleX(0);
+    transition: transform 0.3s ease; /* Animate the line */
+}
+
+nav ul li a:hover {
+    color: #e94560; /* Change text color on hover */
+    transform: translateY(-2px); /* Slightly lift the text */
+}
+
+nav ul li a:hover::before {
+    transform: scaleX(1); /* Expand the underline on hover */
+}
+/* Hero Section */
+#hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Make sure content is above the video */
+    color: white; /* Change text color for better visibility */
+}
+.hero-content {
+    animation: slideIn 2s ease-in-out;
+}
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.hero-content .btn {
+    padding: 10px 20px;
+    background: #e94560;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.hero-content .btn:hover {
+    background: #fff;
+    color: #e94560;
+    transform: scale(1.1);
+}
+
+/* Keyframes */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About, Events, and Contact Sections */
+#about, #events, #contact {
+    padding: 50px 20px;
+    text-align: center;
+    background: #16213e;
+}
+#events {
+    padding: 50px 20px;
+    text-align: center;
+}
+#events h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.events-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.event-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+}
+.event-list li {
+    background-color: #1a1a2e;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+.event-list li:hover {
+    background-color: #0f3460;
+    transform: scale(1.02);
+    color: #e94560;
+}
+.event-preview {
+    margin-top: 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+.event-preview img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Register Section */
+#register {
+    padding: 50px 20px;
+    text-align: center;
+    background: #0f3460;
+}
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #1a1a2e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+form label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+}
+form input, form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+form input, form select {
+    background: white;
+    color: #151212;
+}
+form button {
+    background: #73a2c9;
+    color: #f4f1f1;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+form button:hover {
+    background: #e94560;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0f3460;
+}
